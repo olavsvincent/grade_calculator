@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-icon">G</span> Grade<span>Wise</span></a>
+    <span class="top-label">STUDENT TOOL</span>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">YOUR ACADEMIC COMPANION</p>
+      <h1>Know where you <span>stand.</span></h1>
+      <p>Track your subjects, calculate your weighted average, and stay on top of your grades.</p>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card primary-card">
+        <div class="summary-top">
+          <span>Weighted Average</span>
+          <span class="summary-icon">↗</span>
+        </div>
+        <h2 id="average">--</h2>
+        <p id="averageRemark">Add your grades to get started</p>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Total Subjects</span>
+        <h2 id="totalSubjects">0</h2>
+        <p>Subjects added</p>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Passed</span>
+        <h2 id="passedSubjects">0</h2>
+        <p>Grades of 75 and above</p>
+      </article>
+      <article class="summary-card">
+        <span class="summary-label">Failed</span>
+        <h2 id="failedSubjects">0</h2>
+        <p>Grades below 75</p>
+      </article>
+    </section>
+
+    <section class="panel">
+      <div class="panel-heading">
+        <div>
+          <h2>Your subjects</h2>
+          <p>Enter a grade and its corresponding units.</p>
+        </div>
+        <button class="button button-primary" id="addSubject">+ Add Subject</button>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>SUBJECT</th>
+              <th>GRADE</th>
+              <th>UNITS</th>
+              <th>REMARK</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="subjectList"></tbody>
+        </table>
+      </div>
+
+      <div class="empty-state" id="emptyState">
+        <div class="empty-icon">✎</div>
+        <h3>No subjects yet</h3>
+        <p>Add your first subject to calculate your average.</p>
+        <button class="button button-primary" id="emptyAdd">Add Your First Subject</button>
+      </div>
+
+      <div class="panel-footer">
+        <span id="unitSummary">Total units: 0</span>
+        <div class="footer-actions">
+          <button class="button button-light" id="clearGrades">Clear All</button>
+          <button class="button button-dark" id="exportGrades">Export CSV ↓</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-grid">
+      <article class="info-card">
+        <div class="info-icon">✓</div>
+        <div>
+          <h3>Passing grade</h3>
+          <p>A grade of 75 or higher is considered passing in this calculator.</p>
+        </div>
+      </article>
+      <article class="info-card">
+        <div class="info-icon">∑</div>
+        <div>
+          <h3>Weighted average</h3>
+          <p>Each grade is multiplied by its units before calculating the average.</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>GradeWise · Made for students</footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
